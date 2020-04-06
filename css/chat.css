@@ -1,9 +1,21 @@
-.chat-screen {
+/* .chat-screen {
   background-image: url("../images/chatBg.png");
   min-height: 100vh;
+} */
+
+.header-wrapper {
+  background-color: white;
+  padding: 5px 0;
+  position: fixed;
+  top: 0px;
+  width: 100%;
 }
+
 .chats-body {
-  padding: 0;
+  padding: 10px 0;
+  background-image: url("../images/chatBg.png");
+  min-height: 100vh;
+  padding-top: 100px;
 }
 
 .chats-body .header,
@@ -11,21 +23,45 @@
   padding: 0 20px;
 }
 
-.chat__write {
+.chat__write-container {
   position: fixed;
-  bottom: 50px;
-  width: 80%;
   display: flex;
+  bottom: 0;
   justify-content: space-between;
   align-items: center;
   background-color: #fcfcfc;
   padding: 20px;
-  border-radius: 40px;
   margin: 0 auto;
   left: 0;
   right: 0;
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.25);
+}
+
+.chat__write {
+  bottom: 0;
+  width: 100%;
+  border-radius: 0;
+  width: 100%;
+  border: none;
+  padding: 10px 40px;
+  font-size: 14px;
+}
+.chat__icon-left {
+  position: absolute;
+}
+
+.chat__icon-right {
+  position: absolute;
+  right: 10px;
+}
+.chat__write:focus {
+  outline: none;
+}
+
+.chat__icon {
+  transition: opacity 0.5s ease-in-out;
+}
+.chat__write:focus ~ .chat__icon {
+  opacity: 0;
 }
 
 .chat__write i {
@@ -36,13 +72,6 @@
   width: 80%;
 }
 .chat__write-column input {
-  padding: 10px;
-  width: 100%;
-  border: none;
-  font-size: 14px;
-}
-.chat__write-column input:focus {
-  outline: none;
 }
 
 .chat-screen .chat__messages {
